@@ -33,6 +33,7 @@ import org.apache.maven.eventspy.internal.EventSpyDispatcher;
 import org.apache.maven.model.Profile;
 import org.apache.maven.project.DefaultProjectBuildingRequest;
 import org.apache.maven.project.ProjectBuildingRequest;
+import org.apache.maven.project.ReactorModelCache;
 import org.apache.maven.properties.internal.SystemProperties;
 import org.apache.maven.settings.Mirror;
 import org.apache.maven.settings.Proxy;
@@ -1105,6 +1106,7 @@ public class DefaultMavenExecutionRequest
             projectBuildingRequest.setProfiles( getProfiles() );
             projectBuildingRequest.setProcessPlugins( true );
             projectBuildingRequest.setBuildStartTime( getStartTime() );
+            projectBuildingRequest.setModelCache( new ReactorModelCache() );
         }
 
         return projectBuildingRequest;

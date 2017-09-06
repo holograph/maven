@@ -29,7 +29,7 @@ import org.apache.maven.model.building.ModelCache;
  *
  * @author Benjamin Bentmann
  */
-class ReactorModelCache
+public class ReactorModelCache
     implements ModelCache
 {
 

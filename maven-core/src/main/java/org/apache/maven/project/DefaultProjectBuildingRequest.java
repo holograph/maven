@@ -68,6 +68,8 @@ public class DefaultProjectBuildingRequest
 
     private RepositoryMerging repositoryMerging = RepositoryMerging.POM_DOMINANT;
 
+    private ReactorModelCache modelCache;
+
     public DefaultProjectBuildingRequest()
     {
         processPlugins = true;
@@ -97,6 +99,7 @@ public class DefaultProjectBuildingRequest
         setProject( request.getProject() );
         setResolveDependencies( request.isResolveDependencies() );
         setValidationLevel( request.getValidationLevel() );
+        setModelCache( request.getModelCache() );
     }
 
     public MavenProject getProject()
@@ -341,4 +344,13 @@ public class DefaultProjectBuildingRequest
         return repositoryMerging;
     }
 
+    @Override
+    public ReactorModelCache getModelCache() {
+        return modelCache;
+    }
+
+    public ProjectBuildingRequest setModelCache(ReactorModelCache modelCache ) {
+        this.modelCache = modelCache;
+        return this;
+    }
 }

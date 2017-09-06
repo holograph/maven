@@ -185,6 +185,20 @@ public interface ProjectBuildingRequest
     ProjectBuildingRequest setResolveVersionRanges( boolean value );
 
     /**
+     * Gets the model cache to use for reuse of previously built models.
+     *
+     * @return The model cache or {@code null} if not set.
+     */
+    ReactorModelCache getModelCache();
+
+    /**
+     * Sets the model cache to use for reuse of previously built models.
+     *
+     * @return The model cache, may be {@code null}.
+     */
+    ProjectBuildingRequest setModelCache( ReactorModelCache modelCache );
+
+    /**
      * The possible merge modes for combining remote repositories.
      */
     enum RepositoryMerging
